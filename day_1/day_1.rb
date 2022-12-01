@@ -28,9 +28,17 @@ class GetElvesFromList
   end
 end
 
-class DesignateElf
+class DesignateElfWithMostCalories
   def call(input)
     elves = GetElvesFromList.new.call(input)
     elves.max_by(&:carried_calories)
+  end
+end
+
+
+class DesignateTopThreeElves
+  def call(input)
+    elves = GetElvesFromList.new.call(input)
+    elves.sort_by(&:carried_calories).last(3)
   end
 end

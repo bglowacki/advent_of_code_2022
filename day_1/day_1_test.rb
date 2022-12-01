@@ -20,7 +20,7 @@ class Day1Test < Minitest::Test
       10000
     TXT
 
-    elf = DesignateElf.new.call(test_input)
+    elf = DesignateElfWithMostCalories.new.call(test_input)
 
     assert_equal( 24000, elf.carried_calories)
   end
